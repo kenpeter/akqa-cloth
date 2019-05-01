@@ -10,10 +10,18 @@ const Products = ({ data }) => {
           <div className="productImg">
             <img src={imgUrl} alt={item.productImage} />
           </div>
-          <div className="productTags">
-            <div className="productTag">{item.isSale}</div>
-            <div className="productTags">{item.isExclusive}</div>
-          </div>
+          {item.isSale || item.isExclusive ? (
+            <div className="productTags">
+              {item.isSale ? <span className="sale">Sale</span> : ''}
+              {item.isExclusive ? (
+                <span className="exclusive">Exclusive</span>
+              ) : (
+                ''
+              )}
+            </div>
+          ) : (
+            ''
+          )}
           <div className="productContent">
             <div className="productName">{item.productName}</div>
             <div className="productPrice">{item.price}</div>
