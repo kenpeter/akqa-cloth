@@ -1,0 +1,76 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.topBar {
+  background-color: #eaf5ff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productContainer {
+  border: 1px solid #ccc;
+  height: 240px;
+  /* if we have border, magin, etc, this needs change */
+  flex: 1 0 24%;
+}
+
+.productContainer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.productTags {
+  height: 25px;
+  margin-top: 5px;
+}
+
+.productContent {
+  margin-top: 5px;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productContent .productName {
+  font-size: 70%;
+  width: 50%;
+  text-align: left;
+}
+
+.productContent .productPrice {
+  font-size: 70%;
+  width: 50%;
+  text-align: right;
+}
+
+.sale {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  width: 40px;
+  text-align: center;
+  font-size: 80%;
+}
+
+.exclusive {
+  background-color: green;
+  color: white;
+  padding: 5px;
+  width: 80px;
+  text-align: center;
+  font-size: 80%;
+}
+
+.productContent {
+  display: flex;
+  justify-content: space-between;
+}

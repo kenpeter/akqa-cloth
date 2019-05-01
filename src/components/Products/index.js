@@ -7,24 +7,14 @@ const Products = ({ data }) => {
       const imgUrl = `${Config.imgUrl}/${item.productImage}`;
       return (
         <div className="productContainer" key={item.index}>
-          <div className="productImg">
-            <img src={imgUrl} alt={item.productImage} />
+          <img src={imgUrl} alt={item.productImage} />
+          <div className="productTags">
+            {item.isSale ? <div className="sale">Sale</div> : ''}
+            {item.isExclusive ? <div className="exclusive">Exclusive</div> : ''}
           </div>
-          {item.isSale || item.isExclusive ? (
-            <div className="productTags">
-              {item.isSale ? <span className="sale">Sale</span> : ''}
-              {item.isExclusive ? (
-                <span className="exclusive">Exclusive</span>
-              ) : (
-                ''
-              )}
-            </div>
-          ) : (
-            ''
-          )}
           <div className="productContent">
-            <div className="productName">{item.productName}</div>
-            <div className="productPrice">{item.price}</div>
+            <span className="productName">{item.productName}</span>
+            <span className="productPrice">{item.price}</span>
           </div>
         </div>
       );
