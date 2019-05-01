@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadProductsAPI } from '../../reducers/products';
+import { getSizeFilterDataAPI } from '../../reducers/filter';
 
 class Filter extends Component {
   constructor(props) {
@@ -12,6 +13,11 @@ class Filter extends Component {
     };
   }
 
+  componentDidMount() {
+    const { getSizeFilterDataAPIProps } = this.props;
+    getSizeFilterDataAPIProps();
+  }
+
   change = e => {
     const { loadProductsAPIProps } = this.props;
     this.setState({ value: e.target.value });
@@ -19,6 +25,7 @@ class Filter extends Component {
   };
 
   render() {
+    const { data } = this.props;
     const { value } = this.state;
     return (
       <div className="filter">
@@ -35,12 +42,15 @@ class Filter extends Component {
   }
 }
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = state => {
+  return {
+    data: state.filterReducer.data
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
-  loadProductsAPIProps: val => dispatch(loadProductsAPI(val))
+  loadProductsAPIProps: val => dispatch(loadProductsAPI(val)),
+  getSizeFilterDataAPIProps: () => dispatch(getSizeFilterDataAPI())
 });
 
 export default connect(

@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/api/search-products/:filterText?', routes.searchClothes);
+app.get('/api/size-filter-data/', routes.sizeFilterData);
 
 const server = app.listen(8000, function() {
   console.log('app running on port.', server.address().port);
