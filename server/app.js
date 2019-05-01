@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.get('/api/search-clothes/:filterText?', routes.searchClothes);
+app.get('/api/search-products/:filterText?', routes.searchClothes);
 
 const server = app.listen(8000, function() {
   console.log('app running on port.', server.address().port);
