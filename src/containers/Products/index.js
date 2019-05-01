@@ -13,8 +13,6 @@ class Products extends Component {
   render() {
     const { data } = this.props;
 
-    console.log('data', data);
-
     return (
       <div>
         {data.length === 0 ? (

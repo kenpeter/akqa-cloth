@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch, Router } from 'react-router-dom';
 import history from './history';
 import store from './store';
-import Products from './containers/Products';
+import MainContainer from './containers/MainContainer';
 import './App.css';
 
 export default class App extends Component {
@@ -14,8 +14,8 @@ export default class App extends Component {
       <Provider store={store}>
         <Router history={history}>
           <Switch>
-            <Route exact path="/" component={Products} />
-            <Route component={Products} />
+            <Route exact path="/" component={MainContainer} />
+            <Route component={MainContainer} />
           </Switch>
         </Router>
       </Provider>
