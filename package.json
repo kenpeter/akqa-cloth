@@ -16,7 +16,11 @@
     "eject": "react-scripts eject",
     "start": "concurrently --kill-others \"nodemon ./server/app.js\" \"react-scripts start\""
   },
-  "precommit": "NODE_ENV=production lint-staged",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx}": [
       "pretty-quick --staged",
