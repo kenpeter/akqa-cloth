@@ -70,10 +70,10 @@ export const loadProductsFail = errors => {
   };
 };
 
-export const loadProductsAPI = () => {
+export const loadProductsAPI = filterText => {
   return dispatch => {
     dispatch(startLoadProducts());
-    getProducts()
+    getProducts(filterText)
       .then(res => {
         return res.json();
       })
