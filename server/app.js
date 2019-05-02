@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -12,6 +13,6 @@ app.use(express.static('public'));
 app.get('/api/search-products/:filterText?', routes.searchClothes);
 app.get('/api/size-filter-data/', routes.sizeFilterData);
 
-const server = app.listen(8000, function() {
+const server = app.listen(8000, () => {
   console.log('app running on port.', server.address().port);
 });

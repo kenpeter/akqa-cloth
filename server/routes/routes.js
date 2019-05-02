@@ -1,6 +1,7 @@
+/* eslint-disable global-require */
 const getProductsFilter = (filterText, products) => {
   const out = [];
-  for (let i = 0; i < products.length; i++) {
+  for (let i = 0; i < products.length; i += 1) {
     if (products[i].size.includes(filterText.toUpperCase())) {
       out.push(products[i]);
     }
@@ -28,14 +29,14 @@ const getSizeFilterData = () => {
   const p = require('../data/products.json');
 
   let out = [];
-  for (let i = 0; i < p.length; i++) {
+  for (let i = 0; i < p.length; i += 1) {
     out = [...new Set([...out, ...p[i].size])];
   }
   return out;
 };
 
 exports.searchClothes = (req, res) => {
-  const {filterText} = req.params;
+  const { filterText } = req.params;
   const products = getProducts(filterText);
   res.status(200).json(products);
 };
