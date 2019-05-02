@@ -11,3 +11,5 @@
 * Use `flex` and it is very responsive. Image is scaled.
 * Build dropdown filters from data.
 * Hide and show data depending on the dropdown filters, with help of redux.
+* Github readme is included.
+* Code is clean and linted.
