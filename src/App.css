@@ -19,7 +19,8 @@
   border: 1px solid #ccc;
   height: 240px;
   /* if we have border, magin, etc, this needs change */
-  flex: 1 0 24%;
+  flex: 1 0 23.5%;
+  padding: 2px;
 }
 
 .productContainer img {
