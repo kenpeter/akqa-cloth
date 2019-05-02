@@ -24,6 +24,18 @@ class Filter extends Component {
     loadProductsAPIProps(e.target.value);
   };
 
+  buildLayout = data => {
+    const res = data.map(item => {
+      return (
+        <option value={item} key={item}>
+          {item}
+        </option>
+      );
+    });
+
+    return res;
+  };
+
   render() {
     const { data } = this.props;
     const { value } = this.state;
@@ -31,11 +43,7 @@ class Filter extends Component {
       <div className="filter">
         <select onChange={this.change.bind(this)} value={value}>
           <option value="">Filter by size</option>
-          <option value="XS">XS</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
+          {this.buildLayout(data)}
         </select>
       </div>
     );

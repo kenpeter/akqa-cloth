@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getSizeFilterData } from '../api/filter';
 
 export const GET_SIZE_FILTER_DATA_SUCCESS =
