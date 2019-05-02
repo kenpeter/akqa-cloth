@@ -50,6 +50,10 @@ class Filter extends Component {
   }
 }
 
+Filter.defaultProps = {
+  data: []
+};
+
 const mapStateToProps = state => {
   return {
     data: state.filterReducer.data
